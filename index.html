@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>曦光之地：商会风云</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="曦光之地">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="topbar"></header>
+    <div id="control-bar">
+      <button id="btn-day" class="btn primary big">推进一天</button>
+      <button id="btn-day3" class="btn big">推进三天</button>
+      <button id="btn-auto" class="btn big">自动经营</button>
+      <span id="speed-hint"></span>
+    </div>
+    <main id="main">
+      <section id="map-panel">
+        <canvas id="worldmap"></canvas>
+        <div id="map-hint">左键拖拽平移 · 滚轮缩放 · 点击城镇查看详情</div>
+        <div id="city-tooltip" class="hidden"></div>
+      </section>
+      <aside id="side-panel"></aside>
+    </main>
+    <div id="toasts"></div>
+    <div id="modal-root"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/market.js"></script>
+  <script src="js/caravans.js"></script>
+  <script src="js/city.js"></script>
+  <script src="js/diplomacy.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/companies.js"></script>
+  <script src="js/sites.js"></script>
+  <script src="js/rivals.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/festivals.js"></script>
+  <script src="js/travel.js"></script>
+  <script src="js/adventurers.js"></script>
+  <script src="js/production.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js').catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>

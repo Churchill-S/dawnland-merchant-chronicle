@@ -1,0 +1,23 @@
+# 系统 / 编辑器垃圾文件
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+
+# Node / 调试日志
+npm-debug.log*
+*.log
+
+# 构建产物：发布 zip 请上传到 GitHub Releases，release/ 为本地打包目录
+release/
+*.zip
+
+# 测试临时输出
+simtest_out.txt
+balance_out.txt
+tools/*_out.txt
+
+# 作者原创设定源文档（如需公开，请自行删除下面这行）
+*.docx
