@@ -8,14 +8,6 @@
 > 一款**零依赖、双击即玩**的网页经营模拟游戏：从「曦光之地」六国二十二城、海外新大陆苍澜洲与银沙大岛中选一座城市起步，经营十年，把它变成全大陆最繁荣的商都。
 > 纯 HTML/CSS/JS 编写，无框架、无构建、无联网需求，用任意现代浏览器打开 `index.html` 即可开始。
 
-## 🎮 在线试玩
-
-部署到 GitHub Pages 后，访问：
-
-**https://\<你的用户名\>.github.io/\<仓库名\>/**
-
-（将上面两个尖括号占位符换成你自己的信息；也可以完全不用在线版——直接把仓库下载下来双击 `index.html` 就能玩。）
-
 ## 📸 截图
 
 ![游戏截图](screenshot.png)
@@ -41,23 +33,6 @@
 2. 用 Chrome / Edge / Firefox 双击打开 `index.html`；
 3. 存档保存在浏览器本地（localStorage），重开页面可继续。
 
-## 📦 发布 / 分发给朋友
-
-仓库根目录即完整可玩版本。发布新版本时：
-
-```powershell
-# 1. 在本地制作发布包
-New-Item -ItemType Directory -Force -Path dist\css, dist\js | Out-Null
-Copy-Item index.html dist\
-Copy-Item css\style.css dist\css\
-Copy-Item js\*.js dist\js\
-
-# 2. 打成 zip
-Compress-Archive -Path dist\* -DestinationPath Dawnland-Merchant-Chronicle.zip
-```
-
-也可以直接把 `Dawnland-Merchant-Chronicle.zip` 上传到 GitHub 的 **Releases** 页面，作为「绿色版」下载附件（`release/` 与 `*.zip` 已在 `.gitignore` 中忽略，不入库）。
-
 ## 🗂 项目结构
 
 ```text
@@ -81,14 +56,6 @@ tools/
   balance.js          数值平衡分析工具
   scan_i18n.js        英文翻译覆盖扫描（开发辅助）
 开发路线图.md          开发规划
-```
-
-## 🧪 开发自检
-
-```bash
-node tools/simtest.js    # 六城 AI 十年模拟 + 功能断言（约 2~3 分钟）
-node tools/uitest.js     # 页面接线冒烟测试（几秒）
-node tools/balance.js    # 数值平衡遥测（约 1~5 分钟）
 ```
 
 ## 📜 许可证
